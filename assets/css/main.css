@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #eee;
+  display: block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 100px auto;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button span {
+  background-color: #333;
+  color: #fff;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  min-width: 240px;
+  padding: 10px 15px;
+  font-size: 18px;
+  opacity: 0;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transition: all 0.5s 0s ease;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -ms-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+}
+
+button span::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  border: 10px solid;
+  border-color: #333 transparent transparent transparent;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+
+button:hover {
+  overflow: visible;
+}
+
+button:hover span {
+  opacity: 1;
+}
+
+[data-position="bottom"] span {
+  top: auto ;
+  bottom: -60px;
+}
+
+
+[data-position="bottom"] span::before {
+  bottom: auto;
+  top: -20px;
+  border-color: transparent transparent #333;
+}
